@@ -15,7 +15,7 @@ function getLocalStorageValue() {
   }
 }
 TodoList = getLocalStorageValue();
-let count = TodoList.length;
+
 
 saveButton.onclick = function () {
   localStorage.setItem("TodoList", JSON.stringify(TodoList));
@@ -108,7 +108,7 @@ function addNewTodoInList() {
 
   let newTodo = {
     text: inputValue,
-    uniqueNo: count + 1,
+    uniqueNo: Date.now(),
     isChecked: false,
   };
 
